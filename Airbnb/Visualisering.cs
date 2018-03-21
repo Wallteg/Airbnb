@@ -42,11 +42,13 @@ namespace Airbnb
                 try
                 {
                     conn.Open(); // öppna kopplingen
-                    List<Accommodation> AccommodationList = new List<Accommodation>(); //skapa en lista med alla Accommodations
-
+                    
                     SqlCommand myQuery = new SqlCommand("SELECT * FROM " + item + ";", connection: conn); // ITEM = Citynames
 
                     SqlDataReader myReader = myQuery.ExecuteReader();
+
+
+                    List<Accommodation> AccommodationList = new List<Accommodation>(); //skapa en lista med alla Accommodations
 
 
                     // Deklarerar de variabler jag vill använda för att tanka in mina värden i.
@@ -65,13 +67,8 @@ namespace Airbnb
                     double Longitude;
                     string Last_modified;
 
-                                // tillfälliga strängar som sedan konverteras till double.
-                                string letOS; 
-                                string letBed;
-                                string letPrice;
-                                string letLat;
-                                string letLong;
-                                bool MinstayTest; // Bool, för att testa om minstay är 'null' eller har värde
+                            // Bool, för att testa om minstay är 'null' eller har värde
+                            bool MinstayTest; 
 
 
 
@@ -92,13 +89,10 @@ namespace Airbnb
                         }
                         Neighborhood = myReader["Neighborhood"].ToString();
                         Reviews = (int)myReader["reviews"];
-                            letOS = myReader["Overall_Satisfaction"].ToString(); //tillfällig
-                        Overall_Satisfaction = double.Parse(letOS);
-                            letBed = myReader["Bedrooms"].ToString();  //tillfällig
-                        Bedrooms = double.Parse(letBed);
+                        Overall_Satisfaction = Convert.ToDouble(myReader["Overall_Satisfaction"]);
+                        Bedrooms = Convert.ToDouble(myReader["Bedrooms"]);
                         Accommodates = (int)myReader["Accommodates"];
-                            letPrice = myReader["Price"].ToString();  //tillfällig
-                        Price = double.Parse(letPrice);
+                        Price = Convert.ToDouble(myReader["Price"]);
 
                         MinstayTest = int.TryParse(Convert.ToString(myReader["Minstay"]), out Minstay);
                         if (MinstayTest == false)
@@ -109,10 +103,8 @@ namespace Airbnb
                         {
                             Minstay = (int)myReader["Minstay"];
                         }
-                            letLat = myReader["Latitude"].ToString();   //tillfällig
-                        Latitude = double.Parse(letLat);
-                            letLong = myReader["Longitude"].ToString();    //tillfällig
-                        Longitude = double.Parse(letLong); 
+                        Latitude = Convert.ToDouble(myReader["Latitude"]);
+                        Longitude = Convert.ToDouble(myReader["Longitude"]); 
                         Last_modified = myReader["Last_modified"].ToString();
 
 
@@ -157,7 +149,7 @@ namespace Airbnb
 
             foreach (City c in cities)  // För att kunna plocka fram önskad stad till de olika charterna.
             {
-                switch (c.NameCity) //utgår från mina olika städer som finns i klassen City
+                switch (c.NameCity) //utgår från mina olika städer som finns i klassen City så vi kan dela upp datan efter önskad stad.
                 {
                     case "Boston":  //Om staden är Boston
                         foreach (Accommodation ac in c.Accommodates.Where(y => y.room_type == "Private room"))
@@ -238,10 +230,11 @@ namespace Airbnb
             Barcelona2.Series["Price"].ChartType = SeriesChartType.Point;
             Barcelona2.Titles.Add("Barcelona Scatterplot");
         }
-
+        
         private void chart1_Click(object sender, EventArgs e)
         {
 
         }
+        
     }
 }
