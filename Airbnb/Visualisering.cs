@@ -68,10 +68,10 @@ namespace Airbnb
                     string Last_modified;
 
                             // Bool, för att testa om minstay är 'null' eller har värde
-                            bool MinstayTest; 
+                            bool MinstayTest;
 
 
-
+                    // Jerome cooment: bra att skapa 2 test
 
                     while (myReader.Read())
                     {
@@ -180,6 +180,7 @@ namespace Airbnb
             foreach (City c in cities)
             {
                 switch (c.NameCity)
+                // Jerome Comment: interessant sätt att få lisor för varje stad. det är ny till mig
                 {
                     case "Boston":
                         foreach (Accommodation ac in c.Accommodates.Where(y => y.overall_satisfaction != 0 && y.overall_satisfaction < 4.5))
@@ -208,6 +209,7 @@ namespace Airbnb
                 }
             }
             // Första charten, Boston 
+            // Jerome comment: Bra att updatera title här i koden. det gör det lättare att ändra
             Boston1.Series["Price"].ChartType = SeriesChartType.Column;
             Boston1.Titles.Add("Boston Histogram");
             
@@ -235,6 +237,12 @@ namespace Airbnb
         {
 
         }
-        
+
+        private void Barcelona1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+// JA comment: charter ser ut snyggt och fungerar bra. Det var lätt att läsa och förstå hur det fungerar
+

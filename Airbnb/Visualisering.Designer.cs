@@ -97,6 +97,7 @@
             this.Barcelona1.Size = new System.Drawing.Size(296, 227);
             this.Barcelona1.TabIndex = 3;
             this.Barcelona1.Text = "chart4";
+            this.Barcelona1.Click += new System.EventHandler(this.Barcelona1_Click);
             // 
             // Amsterdam1
             // 

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Airbnb
 {
     class City // skapa en klass för Städer
+               // Jerome comment: Jag tror att det skulle vara bättre att skapa variable som private först och deklarerar dem public senare
     {
         public City(
             string nameCity, 
