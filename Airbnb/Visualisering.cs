@@ -134,7 +134,7 @@ namespace Airbnb
                     City city = new City(item, 0, 0, 0, AccommodationList);
                     cities.Add(city);
 
-                    
+                 
                    
                 }
                 catch (Exception ex)
