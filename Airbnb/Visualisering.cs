@@ -176,7 +176,7 @@ namespace Airbnb
                         break;
                 }
             }
-
+            
             foreach (City c in cities)
             {
                 switch (c.NameCity)
