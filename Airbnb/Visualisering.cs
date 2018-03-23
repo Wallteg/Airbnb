@@ -209,33 +209,33 @@ namespace Airbnb
             }
             // Första charten, Boston 
             Boston1.Series["Price"].ChartType = SeriesChartType.Column;
-            Boston1.Titles.Add("Boston Histogram");
+            Boston1.Titles.Add("Boston Private Room");
             Boston1.ChartAreas[0].AxisY.Title = "Price";
             Boston1.ChartAreas[0].AxisX.Title = "Accommodations";
 
             //
             Boston2.Series["OS"].ChartType = SeriesChartType.Point;
-            Boston2.Titles.Add("Boston Scatterplot");
+            Boston2.Titles.Add("Boston Price vs Overall Satisfaction");
             Boston2.ChartAreas[0].AxisY.Title="Price";
             Boston2.ChartAreas[0].AxisX.Title = "Overall Satisfaction";
 
             Amsterdam1.Series["Price"].ChartType = SeriesChartType.Column;
-            Amsterdam1.Titles.Add("Amsterdam Histogram");
+            Amsterdam1.Titles.Add("Amsterdam Private Room");
             Amsterdam1.ChartAreas[0].AxisY.Title = "Price";
             Amsterdam1.ChartAreas[0].AxisX.Title = "Accommodations";
 
             Amsterdam2.Series["OS"].ChartType = SeriesChartType.Point;
-            Amsterdam2.Titles.Add("Amsterdam Scatterplot");
+            Amsterdam2.Titles.Add("Amsterdam Price vs Overall Satisfaction");
             Amsterdam2.ChartAreas[0].AxisY.Title = "Price";
             Amsterdam2.ChartAreas[0].AxisX.Title = "Overall Satisfaction";
 
             Barcelona1.Series["Price"].ChartType = SeriesChartType.Column;
-            Barcelona1.Titles.Add("Barcelona Histogram");
+            Barcelona1.Titles.Add("Barcelona Private Room");
             Barcelona1.ChartAreas[0].AxisY.Title = "Price";
             Barcelona1.ChartAreas[0].AxisX.Title = "Accommodations";
 
             Barcelona2.Series["OS"].ChartType = SeriesChartType.Point;
-            Barcelona2.Titles.Add("Barcelona Scatterplot");
+            Barcelona2.Titles.Add("Barcelona Price vs Overall Satisfaction");
             Barcelona2.ChartAreas[0].AxisY.Title = "Price";
             Barcelona2.ChartAreas[0].AxisX.Title = "Overall Satisfaction";
         }
